@@ -8,8 +8,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
 import java.util.Objects;
 
-import static org.openqa.selenium.By.cssSelector;
-import static org.openqa.selenium.By.xpath;
 
 public class OrangeHrmLive {
 
@@ -20,6 +18,7 @@ public class OrangeHrmLive {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 
         //Login
+
         driver.findElement(By.name("username")).sendKeys("Admin");
         driver.findElement(By.name("password")).sendKeys("admin123");
         driver.findElement(By.tagName("button")).click();
@@ -38,7 +37,6 @@ public class OrangeHrmLive {
         driver.findElement(By.xpath("//div[@class='oxd-select-option'][2]")).click();
         driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[3]/div/div[2]/div/div/div[2]/i")).click();
         driver.findElement(By.xpath("//div[@class='oxd-select-option'][2]")).click();
-
 
         WebElement input = driver.findElement(By.xpath("//input[@placeholder='Type for hints...']"));
         input.sendKeys("pe");
@@ -74,5 +72,8 @@ public class OrangeHrmLive {
         //LOGOUT
         driver.findElement(By.cssSelector("li.oxd-userdropdown")).click();
         driver.findElement(By.cssSelector(".oxd-dropdown-menu > li:nth-child(4)")).click();
+
+        driver.quit();
+
     }
 }
